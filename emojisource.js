@@ -1,6 +1,5 @@
 var emoji = require('node-emoji');
 var probable = require('probable');
-var _ = require('lodash');
 
 var boringEmoji = {
   '100': '💯',
@@ -205,7 +204,7 @@ function emojiKeyIsOKAsATopic(key) {
 }
 
 function emojiValueIsOKAsATopic(value) {
-  var isInBoringEmoji = _.some(boringEmoji, 
+  var isInBoringEmoji = Object.values(boringEmoji).some(
     function valueMatches(boringValue) {
       return boringValue === value;
     }
